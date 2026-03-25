@@ -15,17 +15,22 @@ import { UpdateAddressDto } from '../application/dto/update-address.dto.js';
 @ApiTags('addresses')
 @Controller('addresses')
 export class AddressController {
-  constructor(private readonly addressService: AddressService) {}
+  constructor(private readonly addressService: AddressService) {
+    console.log('AddressController');
+  }
 
   @Post()
   @ApiOperation({ summary: 'Create an address' })
+
   create(@Body() dto: CreateAddressDto) {
+    console.log('create');
     return this.addressService.create(dto);
   }
 
   @Get()
   @ApiOperation({ summary: 'List all addresses' })
   findAll() {
+    console.log('findAll');
     return this.addressService.findAll();
   }
 

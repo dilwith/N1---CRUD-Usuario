@@ -13,7 +13,7 @@ export class PrismaAddressRepository extends AddressRepository {
     super();
     console.log('PrismaAddressRepository');
   }
-
+  ;
   async create(data: CreateAddressData): Promise<AddressEntity> {
     const address = await this.prisma.address.create({ data });
     console.log('create');
